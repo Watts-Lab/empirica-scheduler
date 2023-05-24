@@ -1,0 +1,23 @@
+factors:
+    - name: playerCount
+      desc: playerCount determines the number of Players are in a Game.
+      values:
+        - value: 1
+        - value: 2
+        - value: 3
+        - value: 5
+        - value: 8
+        - value: 13
+    - name: launchDate
+      desc: When the experiment will be run
+      values:
+        - value: 01 Mar 2023 23:30:00 EST
+treatments:
+    - name: Solo
+      desc: Single-player Game
+      factors:
+        playerCount: 1
+    - name: Two Players
+      desc: Two-player Game
+      factors:
+        playerCount: 2

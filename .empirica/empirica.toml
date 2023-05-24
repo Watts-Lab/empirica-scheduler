@@ -1,0 +1,9 @@
+name = "empirica-scheduler"
+
+[tajriba.auth]
+srtoken = "RcDiDDEJiYXqDiNq"
+
+[[tajriba.auth.users]]
+name = "Admin"
+username = "admin"
+password = "rNCDwymd"

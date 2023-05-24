@@ -1,0 +1,62 @@
+/* 
+NoGames.jsx
+James Houghton
+
+If you arrive here without a player object assigned, 
+it means that this was prior to the player registration screen, 
+and so there are no experiments available for the player to join.
+
+If you arrive here with a player object assigned,
+it happened after the player registration (ie, you've done some work)
+but prior to entering the game. (Ie, there should be no game object at this point)
+
+*/
+
+import { usePlayer } from "@empirica/core/player/classic/react";
+import React from "react";
+import { Markdown } from "../components/Markdown";
+
+const noExperimentsMessage = `
+## ⏳ There are no studies available at this time.
+
+We release studies on a regular basis, and we hope that you will have the opportunity to participate soon.
+
+If you believe you have reached this page in error, please contact deliberation-study@wharton.upenn.edu.
+`;
+
+const failureMessage = `
+## 😬 Server error
+We are sorry, your study has unexpectedly stopped. 
+
+You will be compensated for your time.
+
+We hope you can join us in a future study.
+`;
+
+const completeMessage = `
+## 🎉 Thank you for participating!
+
+The experiment is now finished.
+
+We release studies on a regular basis, and we hope that you will have the opportunity to participate again soon.
+`;
+
+function message() {
+  const player = usePlayer();
+
+  if (player && player.get("playerComplete") === true) {
+    console.log("NoGames: complete");
+    return <Markdown text={completeMessage} />;
+  }
+
+  if (player) {
+    console.log("NoGames: error");
+    return <Markdown text={failureMessage} />;
+  }
+
+  return <Markdown text={noExperimentsMessage} />;
+}
+
+export function NoGames() {
+  return <div className="grid h-screen place-items-center">{message()}</div>;
+}
