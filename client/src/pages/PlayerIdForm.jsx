@@ -29,20 +29,18 @@ export function PlayerIdForm({ onPlayerID }) {
   };
 
   const introText = `
-## Reserve a Spot for a Mutliplayer Game
+## Reserve a Spot for a Mutliplayer Study
 
-On the next page, you will be asked to choose a time slot to 
-participate in a multiplayer game. 
-Each slot may have particular requirements for participants (e.g. use of webcam, use of trackpad, etc.)
+In this HIT, you can sign up for a slot in a future multiplayer study. 
+You can only sign up for one slot via this signup HIT.
 
-If there is more than one slot available, feel free to pick the one that
-works best for you. You will only be able to sign up for one slot.
+Studies may have specific participant requirements (e.g., webcam usage, trackpad usage).
+It is important that you arrive on time to the study.
 
-You can also decide how you want to be reminded of the appointment. 
-If you choose email reminders, we will use your mturk notification email to send them.
+When your appointment time arrives, you'll receive a reminder email with a link to the game.
+You can also choose to recieve reminder emails in advance of the game.
 
-During this signup, we will only collect your MTurk ID and any necessary debugging 
-information to ensure the service is working properly.
+During signup, we'll only collect your MTurk ID and debugging information we need to make sure this scheduler is working properly.
 
 If you have any questions, please feel free to email us at
 deliberation-study@wharton.upenn.edu.
@@ -74,7 +72,7 @@ deliberation-study@wharton.upenn.edu.
       )}
       <br />
       <div className="w-auto">
-        <Button handleClick={handleSubmit} testId="joinButton">
+        <Button onClick={handleSubmit} testId="joinButton">
           I consent
         </Button>
       </div>

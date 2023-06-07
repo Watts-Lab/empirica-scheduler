@@ -6,20 +6,24 @@ const prim =
   "border-gray-300 shadow-sm text-gray-700 bg-white hover:bg-gray-50";
 const sec =
   "border-transparent shadow-sm text-white bg-empirica-600 hover:bg-empirica-700";
+const dis = "opacity-50 cursor-not-allowed";
 
 export function Button({
   children,
-  handleClick = null,
+  onClick = null,
   className = "",
   primary = false,
   type = "button",
   autoFocus = false,
+  disabled = false,
 }) {
   return (
     <button
       type={type}
-      onClick={handleClick}
-      className={`${base} ${primary ? prim : sec} ${className}`}
+      onClick={onClick}
+      className={`${base} ${primary ? prim : sec} ${
+        disabled && dis
+      } ${className}`}
       autoFocus={autoFocus}
     >
       {children}

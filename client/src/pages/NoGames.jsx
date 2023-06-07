@@ -21,7 +21,6 @@ const noExperimentsMessage = `
 
 We release studies on a regular basis, and we hope that you will have the opportunity to participate soon.
 
-If you believe you have reached this page in error, please contact deliberation-study@wharton.upenn.edu.
 `;
 
 const failureMessage = `
