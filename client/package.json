@@ -15,7 +15,7 @@
     "autoprefixer": "10.4.7",
     "path": "0.12.7",
     "unocss": "^0.51.4",
-    "vite": "2.9.15",
+    "vite": "2.9.16",
     "vite-plugin-restart": "0.1.1"
   },
   "name": "react",
